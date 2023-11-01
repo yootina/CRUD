@@ -54,7 +54,7 @@ def edit(request, id):
 def update(request, id):
     # 방금 수정한 데이터
     title = request.GET.get('title')
-    content = request.GER.ger('content')
+    content = request.GET.get('content')
 
     # post = Post() => 새로운 게시물을 만들 때
     # 기존 데이터를 가져오기
