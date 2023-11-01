@@ -43,3 +43,12 @@ INSTALLED_APPS= [
 
 1. 모델 정의 (`model.py`)
     - 모델의 이름은 기본적으로 단수형태
+```python
+class post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+```
+2. 번역본 생성
+```
+python manage.py makemigrations
+```
