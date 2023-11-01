@@ -10,3 +10,30 @@
 ```
 django-admin startproject <pjt-name> .
 ```
+4. 가상환경 설정
+```
+python -m venv venv
+```
+5. 가상환경 활성화
+```
+source venv/Scripts/active
+```
+6. 가상환경에 django 설치
+```
+pip install django
+```
+7. 서버 실행 확인
+```
+python manage.py runserver
+```
+8. 앱생성
+```
+django-admin startapp <app-name>
+```
+9. 앱등록 => `settings.py`
+```python
+INSTALLED_APPS= [
+    ...
+    '<app_name>',
+]
+```
