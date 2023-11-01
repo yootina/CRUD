@@ -44,7 +44,7 @@ INSTALLED_APPS= [
 1. 모델 정의 (`model.py`)
     - 모델의 이름은 기본적으로 단수형태
 ```python
-class post(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
 ```
@@ -59,4 +59,34 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-4. 생성한 모델을 admin에 등록
+4. 생성한 모델을 admin에 등록(`admin.py`)
+```python
+from django.contrib import admin
+from .models import Post
+# Register your models here.
+
+admin.site.register(Post)
+```
+
+5. 관리자 계정 생성
+```
+python manage.py createsuperuser
+```
+
+## CRUD
+> Create, Read, Update, Delete
+
+### 1. Read
+- 전체 게시물 출력
+```python
+def index(request):
+    posts = Post.objects.all()
+
+    context = {
+        'posts' : posts,
+
+    }
+
+    return render(request, 'index.html', context)
+```
+- 하나의 게시물 출력
