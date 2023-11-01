@@ -48,7 +48,15 @@ class post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
 ```
+
 2. 번역본 생성
 ```
 python manage.py makemigrations
 ```
+
+3. DB에 반영
+```
+python manage.py migrate
+```
+
+4. 생성한 모델을 admin에 등록
