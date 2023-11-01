@@ -37,3 +37,9 @@ INSTALLED_APPS= [
     '<app_name>',
 ]
 ```
+10. `urls.py` => `views.py` => `templates/*.html` 생성
+
+## model
+
+1. 모델 정의 (`model.py`)
+    - 모델의 이름은 기본적으로 단수형태
